@@ -12,6 +12,20 @@ Development: `npm run dev`
 
 Production: `npm run build`
 
+### Made with :heart: and using
+
+https://tailwindcss.com/docs
+
+https://tailblocks.cc/
+
+https://justingolden.me/tailwind-colors/
+
+https://heroicons.dev/
+
+https://yqnn.github.io/svg-path-editor/
+
+https://github.com/alpinejs/alpine
+
 ### Links
 
 - Live demo: https://justingolden.me/signin
