@@ -15,15 +15,15 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="js/scripts.js"></script>
 </head>
-<body class="text-gray-900">
+<body class="text-gray-900 text-center">
 	<section class="grid md:grid-cols-2">
-		<div class="md:h-screen p-4 bg-indigo-800 text-white text-center">
+		<div class="md:h-screen p-4 bg-indigo-800 text-white">
 			<img src="img/logo.svg" class="w-16 m-4 mx-auto">
 			<h1 class="my-6 text-indigo-100">Company Name</h1>
 			<h2 class="tracking-wide">The place with the stuff</h2>
 			
 		</div>
-		<div class="text-center" x-data="{ tab: location.href.split('#')[1] == 'signup' ? 'signup' : 'login' }">
+		<div x-data="{ tab: location.href.split('#')[1] == 'signup' ? 'signup' : 'login' }">
 			<div class="tabs">
 				<a :class="{ 'active': tab === 'login', 'tab': true }" class="tab" @click="tab = 'login'; $nextTick(()=>document.getElementById('login-email').focus()); location.href = '#'; location.href = '#login'" @keydown.enter="$event.target.click()" tabindex="0">
 					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path transform="scale(-1, 1) translate(-24, 0)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
@@ -76,13 +76,13 @@
 				</label>
 				<input type="email" id="signup-email" name="signup-email" class="mb-4">
 
-				<div class="grid grid-cols-2 gap-4">
+				<div class="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4 text-left">
 					<div>
 						<label for="signup-password">
 							<svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
 							Password
 						</label>
-						<input type="password" id="signup-password" name="signup-password" class="mb-4">	
+						<input type="password" id="signup-password" name="signup-password">	
 					</div>
 					<div>
 						<label for="signup-confirm-password">
