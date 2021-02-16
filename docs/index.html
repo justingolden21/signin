@@ -10,19 +10,38 @@
 	<meta name="keywords" content="">
 	<link rel="shortcut icon" href="img/logo.svg">
 
+	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="js/scripts.js"></script>
 </head>
 <body class="text-gray-900">
-	<section class="grid md:grid-cols-2 md:gap-4">
-		<div class="md:h-screen p-4 bg-gray-800 text-white text-center">
+	<section class="grid md:grid-cols-2">
+		<div class="md:h-screen p-4 bg-indigo-800 text-white text-center">
 			<img src="img/logo.svg" class="w-16 m-4 mx-auto">
-			<h1 class="my-6 text-indigo-200">Company Name</h1>
-			<h2>Sign up for free</h2>
+			<h1 class="my-6 text-indigo-100">Company Name</h1>
+			<h2 class="tracking-wide">Sign up for free</h2>
 			
 		</div>
-		<div class="text-center">
-			<p>hello</p>		
+		<div class="text-center" x-data="{ tab: 'login' }">
+			<div class="tabs">
+				<a :class="{ 'active': tab === 'login', 'tab': true }" class="tab" @click="tab = 'login'; $event.target.blur()" @keydown.enter="tab = 'login'" tabindex="0">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path transform="scale(-1, 1) translate(-24, 0)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+					&nbsp;LOG IN
+				</a>
+				<a :class="{ 'active': tab === 'signup' }" class="tab" @click="tab = 'signup'; $event.target.blur()" @keydown.enter="tab = 'signup'" tabindex="0">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+					&nbsp;SIGN UP
+				</a>
+			</div>
+
+			<div x-show.transition.in.opacity.duration.300ms="tab === 'login'">
+				Login tab
+			</div>
+			<div x-show.transition.in.opacity.duration.300ms="tab === 'signup'">
+				Signup tab
+			</div>
+
 		</div>
 	</section>
 </body>

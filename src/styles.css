@@ -4,13 +4,28 @@
 
 @layer base {
 	::-moz-selection {
-		@apply bg-gray-100;
+		@apply bg-indigo-500 text-white;
 	}
 	::selection {
-		@apply bg-gray-100;
+		@apply bg-indigo-500 text-white;
 	}
+
 	*:focus, button:focus {
 		@apply outline-none ring-2 ring-indigo-500 ring-opacity-50;
+	}
+
+	img {
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+
+		-webkit-user-drag: none;
+		-khtml-user-drag: none;
+		-moz-user-drag: none;
+		-o-user-drag: none;
+		user-drag: none;
 	}
 
 	h1 {
@@ -25,6 +40,15 @@
 }
 
 @layer components {
+	.tabs {
+		@apply p-8 font-medium text-gray-600 tracking-wider mb-8;
+	}
+	.tab {
+		@apply px-6 py-3 border-b-2 inline-flex border-gray-200 hover:text-gray-900 cursor-pointer rounded-t-lg transition-colors duration-300;
+	}
+	.tab.active {
+		@apply bg-gray-100 border-indigo-500 text-indigo-500;
+	}
 
 }
 
