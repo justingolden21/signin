@@ -9,9 +9,12 @@
 	::selection {
 		@apply bg-gray-100;
 	}
+	*:focus, button:focus {
+		@apply outline-none ring-2 ring-indigo-500 ring-opacity-50;
+	}
 
 	h1 {
-		@apply text-2xl font-light;
+		@apply text-5xl font-light;
 	}
 	h2 {
 		@apply text-xl font-medium;
