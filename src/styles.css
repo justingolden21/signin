@@ -44,7 +44,7 @@
 		@apply p-8 font-medium text-gray-600 tracking-wider mb-8;
 	}
 	.tab {
-		@apply px-6 py-3 border-b-2 inline-flex border-gray-200 hover:text-gray-900 cursor-pointer rounded-t-lg transition-colors duration-300;
+		@apply px-6 py-3 border-b-2 inline-flex border-gray-200 hover:border-gray-600 cursor-pointer rounded-t-lg transition-colors duration-300;
 	}
 	.tab.active {
 		@apply bg-gray-100 border-indigo-500 text-indigo-500;
